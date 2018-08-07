@@ -32,7 +32,7 @@ All specs should be passing when you first load the page, and thus should all di
 
 2. Now, in your favorite code editor, open up `jasmine.js` and check out what is being tested for by comparing the code in the suites and specs with the web app's HTML, CSS and `app.js` files.
 
-![alt-text](images/feedreader_dot_js_in_atom.png "The project's feedreader.js Jasmine file displayed an Atom code editor window.)
+![alt-text](images/feedreader_dot_js_in_atom.png "The project's feedreader.js Jasmine file displayed an Atom code editor window.")
 
   * For help understanding what's going on in the `jasmine.js` file, you may wish to start by checking out [this tutorial](https://dev.to/aurelkurtula/unit-testing-with-jasmine-the-very-basics-74k).
 
