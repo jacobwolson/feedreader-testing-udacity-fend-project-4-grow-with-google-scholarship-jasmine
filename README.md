@@ -27,11 +27,11 @@ A portion of the code and most of the comments in `jasmine.js` were provided by 
 
 All specs should be passing when you first load the page, and thus should all display in green font. You will also see a counter at the top of the Jasmine display section listing how many specs are being run, and how many of those are failing — you should see seven specs with zero failing when you first open index.html in a browser window.
 
-![alt-text](images/all_specs_passing.png "All specs shown as passing.")
+![alt-text](images/all_specs_pass.png "All specs shown as passing.")
 
 2. Now, in your favorite code editor, open up `feadreader.js` and check out what is being tested for by comparing the code in the suites and specs with the web app's HTML, CSS and `app.js` files.
 
-![alt-text](images/feedreader_dot_js_in_atom.png "The project's feedreader.js Jasmine file displayed an Atom code editor window.")
+![alt-text](images/feedreader_js_in_atom.png "The project's feedreader.js Jasmine file displayed an Atom code editor window.")
 
   * See if you can figure out how the suites and specs are written. Hint: you can start by spotting the descriptions of the suites and tests displayed in the Jasmine section of the application's page in the code! If you are new to Jasmine, you may wish to check out [this article](https://dev.to/aurelkurtula/unit-testing-with-jasmine-the-very-basics-74k) from DEV as one resource for help understanding what's going on in the `feedreader.js` file. You may also wish to check out [Jasmine 2.2's documentation on GitHub](https://jasmine.github.io/2.2/introduction.html).
 
@@ -39,13 +39,13 @@ All specs should be passing when you first load the page, and thus should all di
 
 3. Once you start to grasp what the specs are testing for in relation to the rest of the app's code, make some of the tests fail, then fix them. Do this by editing the code in `app.js` or any other file in a manner you think will cause the 'expected' conditions in one or more of the specs to not be met. You can also experiment with editing the specs themselves.
 
-![alt-text](images/app_dot_js_in_atom.png "The app.js file displayed in an Atom code editor window.")
+![alt-text](images/app_js_in_atom.png "The app.js file displayed in an Atom code editor window.")
 
 Be sure to save your files after making your edits. Then, refresh the browser window `index.html` is open in, and scroll to the bottom of the page.
 
 If you successfully "broke" the some of functionality being tested for, or changed one or more of the tests in such a way that the code no longer meets the expectation(s), the specs you attempted to cause fail should now be displayed in red. What's more, the number of tests now failing should be listed in the top banner of the Jasmine display section.
 
-![alt-text](images/one_spec_failing.png "One spec shown as failing.")
+![alt-text](images/one_spec_fails.png "One spec shown as failing.")
 
 You can dig in to details about the failure in the lines below the spec description.
 
