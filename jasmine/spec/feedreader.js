@@ -118,15 +118,22 @@ $(function() {
   });
 
   /* COMPLETED: Test suite 'Initial Entries' as specified
-  * by source code's TODO
-  *
-  * The portion of this code inolving passing the done function as a argument
-  * in to beforeEach's callback function and passing it as the second argument
-  * and callback function passed in to the `loadFeed()` function was inpsired by
-  * Matthew Cranford's post "Part 4 — Async Tests," — accessed August, 2018 —
-  * which is part of series of "walkthrough" posts on completing the project:
-  * https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/.
-  */
+* by source code's TODO
+*
+* The technique deployed here for effectively using the `done()` function to
+* test the app's asynchronous `loadFeed()` function — involving passing `done`
+* as an arugment to the `beforeEach()` function and then as the second
+* argument and callback of `loadFeed()` — was inspired by Udacity student
+* Matthew Cranford's sollution outlined in a section of the post
+* "Part 4 — Async Tests," accessed August, 2018:
+* https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/.
+*
+* The referenced post is part of a series of "Walkthrough" posts Cranford
+* published on completing this Udacity FEND project.
+*
+* The `done()` function prevents the spec from running before the asynchonous
+* `loadFeed()` function inside `beforeEach()` completes its task here.
+*/
    describe('Initial Entries', function() {
     beforeEach(function(done) {
       loadFeed(0, done);
@@ -148,15 +155,20 @@ $(function() {
   /* COMPLETED: Test suite "New Feed Selection" as specified by source
   * code's TODO.
   */
-  describe("New Feed Selection", function() {
+  describe('New Feed Selection', function() {
     let initialFirstEntry;
 
-    /* Loads the feed using the first object in the allFeeds array, stores the
-    * `href` attribute of the first item loaded in the feed for reference, then
-    * loads the feed using the second object in the allFeeds array, and passes
-    * `done` as the callback function and second argument of the `loadfeed()`
-    * method in order to prevent the feedreader code from running before
-    * `loadfeed()` completes, as the latter is ansynchronous.
+    /* The particular deployment of `done` here again inspired by the
+    * Cranford's solution in the post "Part 4 — Async Tests" referenced above.
+    *
+    * The code inside beforeEach() loads the feed using the first object in the
+    * allFeeds array, stores the `href` attribute of the first item loaded in to
+    * the feed as the variable `initialFirstEntry` for reference, then loads
+    * the feed using the second object in the allFeeds array. The code passes
+    * `done` as an argument in to `beforeEach()` function and then as the second
+    * argument and callback of the `loadfeed()` function in order to prevent
+    * the spec from running before the asynchronous `loadfeed()` function
+    * comletes its task here.
     */
     beforeEach(function testFeed(done) {
       loadFeed(0);
