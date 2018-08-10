@@ -1,7 +1,7 @@
 /* "feedreader.js"
 *
 * For the sake of learning from a certain angle, the student developer Jacob W.
-* Olson who completed  the TODO's in this file intentionally used plain
+* Olson, who completed  the TODO's in this file, intentionally used plain
 * JavaScript in several places where jQuery may have also been an option.
 *
 * All comments "in quotes" in this file  --  as with all comments whatsoever in
