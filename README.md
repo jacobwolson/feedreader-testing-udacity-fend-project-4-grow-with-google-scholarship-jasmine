@@ -65,7 +65,9 @@ You should now have a better understanding of how some of the code in the feed r
 
 * The article "Using Jasmine 2.0's New Done Function to Test Asynchronous Processes" [posted at HTML Goodies](https://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html) was also consulted for information on running asynchonous tests.
 
-* This README was based on a template provided by Billie Thompson posting under the name "PurpleBooth" at https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A post by Matias Singers posting under the username "matiassingers" at https://github.com/matiassingers/awesome-readme was also consulted.
+* The code used for checking if an element has a certain class using plain JavaScript was inspired by a May 2, 2013 post by user "Damien" [on Stack Overflow](https://stackoverflow.com/a/16337545).
+
+* This README was based on a template by Billie Thompson posted under the username "PurpleBooth": https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A post by Matias Singers under the username "matiassingers" was also consulted: https://github.com/matiassingers/awesome-readme.
 
 * Udacity's FEND Nanodegree program provided the structure and much of the information I needed to learn the basics of HTML, CSS and JavaScript which allowed me to successfully complete this project. My fellow Udacity students as well as the wider programming community also provided indispensable information, resources, support and encouragement.
 
