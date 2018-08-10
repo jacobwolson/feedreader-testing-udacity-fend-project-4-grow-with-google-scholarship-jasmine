@@ -25,7 +25,7 @@ A portion of the code and most of the comments in `jasmine.js` were provided by 
 
   * "Spec" is short for "specification," and each spec's description is written in the form of a statement that 'specifies' how the part of the application described by the spec's suite should perform.
 
-All specs should be passing when you first load the page, and thus should all display in green font. You will also see a counter at the top of the Jasmine display section listing how many specs are being run, and how many of those are failing — you should see seven specs with zero failing when you first open index.html in a browser window.
+  * All specs should be passing when you first load the page, and thus should all display in green font. You will also see a counter at the top of the Jasmine display section listing how many specs are being run, and how many of those are failing — you should see seven specs with zero failing when you first open index.html in a browser window.
 
 ![alt-text](images/all_specs_pass.png "All specs shown as passing.")
 
@@ -41,17 +41,17 @@ All specs should be passing when you first load the page, and thus should all di
 
 ![alt-text](images/app_js_in_atom.png "The app.js file displayed in an Atom code editor window.")
 
-Be sure to save your files after making your edits. Then, refresh the browser window `index.html` is open in, and scroll to the bottom of the page.
+  * Be sure to save your files after making your edits. Then, refresh the browser window `index.html` is open in, and scroll to the bottom of the page.
 
-If you successfully "broke" the some of functionality being tested for, or changed one or more of the tests in such a way that the code no longer meets the expectation(s), the specs you attempted to cause fail should now be displayed in red. What's more, the number of tests now failing should be listed in the top banner of the Jasmine display section.
+  * If you successfully "broke" the some of functionality being tested for, or changed one or more of the tests in such a way that the code no longer meets the expectation(s), the specs you attempted to cause fail should now be displayed in red. What's more, the number of tests now failing should be listed in the top banner of the Jasmine display section.
 
 ![alt-text](images/one_spec_fails.png "One spec shown as failing.")
 
-You can dig in to details about the failure in the lines below the spec description.
+  * You can dig in to details about the failure in the lines below the spec description.
 
 4. After you are done experimenting with editing the code and causing tests to fail, go back and make everything work again! :)
 
-You should now have a better understanding of how some of the code in the feed reader application works and, if you were unfamiliar with the topic before, more skills and knowledge around the basics of testing code with Jasmine. Nice work!
+  * You should now have a better understanding of how some of the code in the feed reader application works and, if you were unfamiliar with the topic before, more skills and knowledge around the basics of testing code with Jasmine. Nice work!
 
 ## Acknowledgements
 
