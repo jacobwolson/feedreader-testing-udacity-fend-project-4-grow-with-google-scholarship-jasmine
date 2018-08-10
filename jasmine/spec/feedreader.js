@@ -1,8 +1,12 @@
 /* "feedreader.js"
 *
-* All comments in quotes in this file  --  and all comments in all other files
-* in this project -- were included as part of the source code supplied by
-* Udacity for this project.
+* For the sake of learning from a certain angle, the student developer Jacob W.
+* Olson who completed  the TODO's in this file intentionally used plain
+* JavaScript in several places where jQuery may have also been an option.
+*
+* All comments "in quotes" in this file  --  as with all comments whatsoever in
+* all other files in this project -- were included as part of the source code
+* supplied by Udacity for this project.
 *
 * "This is the spec file that Jasmine will read and contains
 * all of the tests that will be run against your application."
@@ -11,10 +15,10 @@
 /* "We're placing all of our tests within the $() function,
 * since some of these tests may require DOM elements. We want
 * to ensure they don't run until the DOM is ready."
-*/
-
-/* This wrapper function was included by Udacity as part of the source code for
-* this project.
+*
+*
+* As indicated by the preceeding comment in quotes, this wrapper function was
+* included by Udacity as part of the source code for this project.
 */
 $(function() {
   /* "This is our first test suite - a test suite just contains
@@ -85,12 +89,17 @@ $(function() {
       const menuIcon = document.getElementsByClassName('menu-icon-link').item(0);
       let correctClass = [false, false];
 
-      if (body.className == 'menu-hidden') {
+      /*
+      * Source: Plain JS technique for checking if an element has certain class
+      * inspired by a May 2, 2013, Stack Overflow post by user "Damien,"
+      * accessed Aug., 2018. URL: https://stackoverflow.com/a/16337545
+      */
+      if (body.classList.contains('menu-hidden') == true) {
         menuIcon.click();
-          if (body.className == '') {
+          if (body.classList.contains('menu-hidden') == false) {
             correctClass[0] = true;
             menuIcon.click();
-              if (body.className == 'menu-hidden') {
+              if (body.classList.contains('menu-hidden') == true) {
                 correctClass[1] = true;
               }
           }
@@ -101,12 +110,12 @@ $(function() {
     * possible for `it('on click ... ')` to pass even if the menu is in fact
     *  visible on default and `it('is hidden by default', ... )` does not pass.
     */
-    if (body.className == '') {
+    if (body.classList.contains('menu-hidden') == false) {
       menuIcon.click();
-        if (body.className == 'menu-hidden') {
+        if (body.classList.contains('menu-hidden') == true) {
           correctClass[0] = true;
           menuIcon.click();
-            if (body.className == '') {
+            if (body.classList.contains('menu-hidden') == false) {
               correctClass[1] = true;
             }
         }
@@ -120,13 +129,13 @@ $(function() {
   /* COMPLETED: Test suite 'Initial Entries' as specified
 * by source code's TODO
 *
-* The technique deployed here for effectively using the `done()` function to
-* test the app's asynchronous `loadFeed()` function — involving passing `done`
-* as an arugment to the `beforeEach()` function and then as the second
-* argument and callback of `loadFeed()` — was inspired by Udacity student
-* Matthew Cranford's sollution outlined in a section of the post
-* "Part 4 — Async Tests," accessed August, 2018:
-* https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/.
+* Source: The technique deployed here for effectively using the `done()`
+* function to test the app's asynchronous `loadFeed()` function — involving
+* passing `done`as an arugment to the `beforeEach()` function and then as the
+*  second argument and callback of `loadFeed()` — was inspired by Udacity
+* student Matthew Cranford's sollution outlined in a section of the post
+* "Part 4 — Async Tests," accessed August, 2018.
+* URL: https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/.
 *
 * The referenced post is part of a series of "Walkthrough" posts Cranford
 * published on completing this Udacity FEND project.
@@ -146,6 +155,15 @@ $(function() {
     * beforeEach and asynchronous done() function," as specified.
     */
     it('there is at least one entry in the feed', function() {
+      /*
+      * Variable `feedFirstChild` is saved as the class name of the first child
+      * of * the `.feed` container `<div>` that is an element.
+      *
+      * The `firstElementChild` property is used because the less-specific
+      * `firstChild` property runs the risk of returning values other than the
+      *  first child element: for instance, if there is a blank line before
+      * the first child element in the `<div>` with the class of "feed."
+      */
       const entryInFeed = document.getElementsByClassName('feed').item(0).firstElementChild.className;
 
       expect(entryInFeed).toBe('entry-link');
@@ -156,23 +174,26 @@ $(function() {
   * code's TODO.
   */
   describe('New Feed Selection', function() {
-    let initialFirstEntry;
+    let initialFirstEntryHREF;
+    let newFirstEntryHREF;
 
     /* The particular deployment of `done` here again inspired by the
     * Cranford's solution in the post "Part 4 — Async Tests" referenced above.
     *
-    * The code inside beforeEach() loads the feed using the first object in the
-    * allFeeds array, stores the `href` attribute of the first item loaded in to
-    * the feed as the variable `initialFirstEntry` for reference, then loads
-    * the feed using the second object in the allFeeds array. The code passes
-    * `done` as an argument in to `beforeEach()` function and then as the second
-    * argument and callback of the `loadfeed()` function in order to prevent
-    * the spec from running before the asynchronous `loadfeed()` function
-    * comletes its task here.
+    * The code inside `beforeEach()` loads the `.feed` `<div>` using the first
+    * object in the `allFeeds` array, then stores the `href` attribute of the
+    * first item loaded in to  the feed as the variable `initialFirstEntryHREF`
+    * for reference. The code then loads the feed using the second object in the
+    * allFeeds array.
+    *
+    * The code passes `done` as an argument in to the `beforeEach()` function
+    * and then as the second argument and callback of the `loadfeed()` function
+    * to prevent the spec from running before the asynchronous `loadfeed()`
+    * function comletes its task here.
     */
-    beforeEach(function testFeed(done) {
+    beforeEach(function(done) {
       loadFeed(0);
-      initialFirstEntry = document.getElementsByClassName('feed').item(0).firstElementChild.getAttribute('href');
+      initialFirstEntryHREF = document.getElementsByClassName('feed').item(0).firstElementChild.getAttribute('href');
       loadFeed(1, done);
     });
 
@@ -182,12 +203,19 @@ $(function() {
     * asynchronous.
     */
     it('the content of the feed container changes when a new feed is loaded', function() {
-      /* Saves the value of the `href` attribute of what should be a new first
-      * item in the feed as a variable for comparison with `initialFirstEntry.`
+      /* For comparison with the value of `initialFirstEntryHREF`, value of
+      * `newFirstEntryHREF` is set, now that `loadFeed(1)` has run courtesy
+      * of the `beforeEach()` function in this suite.
       */
-      const newFirstEntry = document.getElementsByClassName('feed').item(0).firstElementChild.getAttribute('href');
+      newFirstEntryHREF = document.getElementsByClassName('feed').item(0).firstElementChild.getAttribute('href');
 
-      expect(newFirstEntry).not.toBe(initialFirstEntry);
+      /* Compares the  `href` attribute of the first element child in the
+      * `.feed` `<div>` loaded after the `loadFeed()` function is run
+      * with the first object in the `allFeeds` array as its argument with the
+      * corresponding `href` attribute that results when `loadFeed()` is run with
+      * the second object in `allFeeds` as its argument.
+      */
+      expect(initialFirstEntryHREF).not.toBe(newFirstEntryHREF);
     });
   });
 }());
