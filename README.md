@@ -67,7 +67,7 @@ A portion of the code and most of the comments in `jasmine.js` were provided by 
 
 * The code used for checking if an element has a certain class using plain JavaScript was inspired by a May 2, 2013 post by user "Damien" [on Stack Overflow](https://stackoverflow.com/a/16337545).
 
-* This README was based on a template by Billie Thompson posted under the username "PurpleBooth": https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A post by Matias Singers under the username "matiassingers" containing README examples and related articles was also consulted: https://github.com/matiassingers/awesome-readme.
+* This README was based on [a template by Billie Thompson](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) posted as a gist under the username "PurpleBooth." The Github repository ["Awesome README" by Matias Singers](https://github.com/matiassingers/awesome-readme) posting under the username "matiassingers" was also consulted.
 
 * Udacity's FEND Nanodegree program provided the structure and much of the information I needed to learn the basics of HTML, CSS and JavaScript which allowed me to successfully complete this project. My fellow Udacity students as well as the wider programming community also provided indispensable information, resources, support and encouragement.
 
