@@ -49,7 +49,7 @@ A portion of the code and most of the comments in `jasmine.js` were provided by 
 
   * You can dig in to details about the failure in the lines below the spec description.
 
-4. After you are done experimenting with editing the code and causing tests to fail, go back and make everything work again! :)
+4. After you are done experimenting with editing the code and causing tests to fail, go back and make everything work again! 🙂
 
   * You should now have a better understanding of how some of the code in the feed reader application works and, if you were unfamiliar with the topic before, more skills and knowledge around the basics of testing code with Jasmine. Nice work!
 
