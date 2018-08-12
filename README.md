@@ -63,7 +63,7 @@ A portion of the code and most of the comments in `jasmine.js` were provided by 
 
 * Portions of Udacity student Matthew Cranford's series of "Feedreader Walkthrough" posts were consulted: https://matthewcranford.com/. In particular, the post [Part 1 — Starter Code](https://matthewcranford.com/feed-reader-walkthrough-part-1-starter-code/) was consulted to gain a better understanding of the provided code before digging in. Furthermore, the section of the post ["Part 4 — Async Tests"](https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/) where Cranford demonstrates an effective way to use the `done()` function in conjunction with `beforeEach()` to run a test involving the asynchronous `loadFeed()` function was consulted.
 
-* The article "Using Jasmine 2.0's New Done Function to Test Asynchronous Processes" [posted at HTML Goodies by Rob Gravelle](https://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html) was also consulted for information on running tests on asynchronous code.
+* The article "Using Jasmine 2.0's New Done Function to Test Asynchronous Processes" [by Rob Gravelle posted at HTML Goodies](https://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html) was also consulted for information on running tests on asynchronous code.
 
 * The code used for checking if an element has a certain class using plain JavaScript was inspired by a May 2, 2013 post by user "Damien" [on Stack Overflow](https://stackoverflow.com/a/16337545).
 
