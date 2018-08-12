@@ -182,7 +182,7 @@ $(function() {
     /* Technique for deploying `done()` inspired by the portion of Cranford's
     * post referenced previously.
     *
-    * A Udacitys reviewer's suggestion was also relied on to get started
+    * A Udacity reviewer's suggestion was also relied on to get started
     * implementing the nested `loadFeed()` functions, a method that makes sure
     * the second `allFeeds` object is NOT loaded, and it's `innnerHTML` "read"
     * and stored as a variable, until the first feed is finished loading and
