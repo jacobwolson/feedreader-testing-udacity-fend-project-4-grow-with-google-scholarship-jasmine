@@ -17,8 +17,10 @@
 * to ensure they don't run until the DOM is ready."
 *
 *
-* As indicated by the preceeding comment in quotes, this wrapper function was
-* included by Udacity as part of the source code for this project.
+* As indicated by the immediately preceding comment in quotes, this wrapper
+* function was included by Udacity as part of the source code for this project.
+* Going forward, comments in quotes should be presumed to be text provided by
+* Udacity as part of the source code.
 */
 $(function() {
   /* "This is our first test suite - a test suite just contains
@@ -32,7 +34,7 @@ $(function() {
     * allFeeds variable has been defined and that it is not
     * empty."
     *
-    * This test was included by Udacity as part of the source code.
+    * This test was also included by Udacity as part of the source code.
     */
     it('are defined', function() {
 
@@ -53,7 +55,7 @@ $(function() {
      });
     });
 
-    /* COMPLETED. As specified in the souce code's TODO, this test
+    /* COMPLETED. As specified in the source code's TODO, this test
     * "loops through each feed in the allFeeds object and ensures
     * it has a name defined and that the name is not empty."
     */
@@ -74,9 +76,21 @@ $(function() {
     * menu element is hidden by default."
     */
     it('is hidden by default', function() {
-      const bodyClass = document.getElementsByTagName('body')[0].className;
+      /*
+      * Source: Plain JS technique for checking if an element has certain class
+      * — used here and elsewhere in `feedreader.js` — inspired by a May 2,
+      * 2013, Stack Overflow post by user "Damien," accessed Aug., 2018.
+      * URL: https://stackoverflow.com/a/16337545.
+      *
+      * Using jQuery `$('body').hasClass('menu-hidden')` — a method suggested
+      * by Udacity reviewers in responses to previous iterations of this code
+      * that did not account for the possibility of the `body` element having
+      * multiple classes — would yield similar results to the plain JS technique
+      * used here.
+      */
+      const bodyClass = document.body.classList.contains('menu-hidden');
 
-      expect(bodyClass).toBe('menu-hidden');
+      expect(bodyClass).toBe(true);
     });
 
     /* COMPLETED: As specified by source code's TODO, this test "ensures
@@ -85,63 +99,55 @@ $(function() {
     * when clicked and does it hide when clicked again."
     */
     it('toggles between visible and not visible on click', function() {
-      const body = document.getElementsByTagName('body')[0];
-      const menuIcon = document.getElementsByClassName('menu-icon-link').item(0);
-      let correctClass = [false, false];
+      const menuIcon = document.body.getElementsByClassName('menu-icon-link').item(0);
+      let hasMenuHidden = document.body.classList.contains('menu-hidden');
 
-      /*
-      * Source: Plain JS technique for checking if an element has certain class
-      * inspired by a May 2, 2013, Stack Overflow post by user "Damien,"
-      * accessed Aug., 2018. URL: https://stackoverflow.com/a/16337545
+      /* Technique of including each `expect()` here inside the `if` statement
+      * inspired by a Udacity reviewer's suggestion. A previous iteration of
+      * this code saved values that corresponded to the `hasMenuHidden` values
+      * here as items in an array after each triggered `.click()` event, and
+      * then a single `expect()` was used to check if the values were not equal.
       */
-      if (body.classList.contains('menu-hidden') == true) {
+      if (hasMenuHidden == true) {
         menuIcon.click();
-          if (body.classList.contains('menu-hidden') == false) {
-            correctClass[0] = true;
-            menuIcon.click();
-              if (body.classList.contains('menu-hidden') == true) {
-                correctClass[1] = true;
-              }
-          }
+        hasMenuHidden = document.body.classList.contains('menu-hidden');
+        expect(hasMenuHidden).toBe(false);
+        menuIcon.click();
+        hasMenuHidden = document.body.classList.contains('menu-hidden');
+        expect(hasMenuHidden).toBe(true);
       };
 
-    /* This code block is included because it should not be assumed that
-    * the menu is hidden by default: i.e., it should stil be
-    * possible for `it('on click ... ')` to pass even if the menu is in fact
-    *  visible on default and `it('is hidden by default', ... )` does not pass.
-    */
-    if (body.classList.contains('menu-hidden') == false) {
-      menuIcon.click();
-        if (body.classList.contains('menu-hidden') == true) {
-          correctClass[0] = true;
-          menuIcon.click();
-            if (body.classList.contains('menu-hidden') == false) {
-              correctClass[1] = true;
-            }
-        }
-    };
+      /* This code block is included because it should not be assumed that
+      * the menu is hidden by default: i.e., it should still be
+      * possible for `it('on click ... ')` to pass even if the menu is in fact
+      *  visible on default and `it('is hidden by default', ... )` does not pass.
+      */
+      if (hasMenuHidden == false) {
+        menuIcon.click();
+        hasMenuHidden = document.body.classList.contains('menu-hidden');
+        expect(hasMenuHidden).toBe(true);
+        menuIcon.click();
+        hasMenuHidden = document.body.classList.contains('menu-hidden');
+        expect(hasMenuHidden).toBe(false);
+      };
 
-    expect(correctClass[0]).toBe(true);
-    expect(correctClass[1]).toBe(true);
     });
   });
 
   /* COMPLETED: Test suite 'Initial Entries' as specified
 * by source code's TODO
 *
-* Source: The technique deployed here for effectively using the `done()`
-* function to test the app's asynchronous `loadFeed()` function — involving
-* passing `done`as an arugment to the `beforeEach()` function and then as the
-*  second argument and callback of `loadFeed()` — was inspired by Udacity
-* student Matthew Cranford's sollution outlined in a section of the post
+* Source: The technique deployed to effectively use the `done()` function
+* to test the app's asynchronous `loadFeed()` function was inspired by Udacity
+* student Matthew Cranford's solution outlined in a section of the post
 * "Part 4 — Async Tests," accessed August, 2018.
 * URL: https://matthewcranford.com/feed-reader-walkthrough-part-4-async-tests/.
 *
 * The referenced post is part of a series of "Walkthrough" posts Cranford
 * published on completing this Udacity FEND project.
 *
-* The `done()` function prevents the spec from running before the asynchonous
-* `loadFeed()` function inside `beforeEach()` completes its task here.
+* The `done()` function prevents the spec from running before the asynchronous
+* `loadFeed()` function inside `beforeEach()` completes its task.
 */
    describe('Initial Entries', function() {
     beforeEach(function(done) {
@@ -156,17 +162,13 @@ $(function() {
     */
     it('there is at least one entry in the feed', function() {
       /*
-      * Variable `feedFirstChild` is saved as the class name of the first child
-      * of * the `.feed` container `<div>` that is an element.
-      *
-      * The `firstElementChild` property is used because the less-specific
-      * `firstChild` property runs the risk of returning values other than the
-      *  first child element: for instance, if there is a blank line before
-      * the first child element in the `<div>` with the class of "feed."
+      * `Document.body` is searched to see if any `.entry` elements are added
+      * after `loadFeed(0)` runs, and an HTMLCollection of any such elements are
+      * stored as a variable via the `getElementsByClassName()` method.
       */
-      const entryInFeed = document.getElementsByClassName('feed').item(0).firstElementChild.className;
+      const entryHTMLColl = document.body.getElementsByClassName('entry');
 
-      expect(entryInFeed).toBe('entry-link');
+      expect(entryHTMLColl.length).not.toBe(0);
     });
   });
 
@@ -174,48 +176,45 @@ $(function() {
   * code's TODO.
   */
   describe('New Feed Selection', function() {
-    let initialFirstEntryHREF;
-    let newFirstEntryHREF;
+    let firstFeed,
+        secondFeed;
 
-    /* The particular deployment of `done` here again inspired by the
-    * Cranford's solution in the post "Part 4 — Async Tests" referenced above.
+    /* Technique for deploying `done()` inspired by the portion of Cranford's
+    * post referenced previously.
     *
-    * The code inside `beforeEach()` loads the `.feed` `<div>` using the first
-    * object in the `allFeeds` array, then stores the `href` attribute of the
-    * first item loaded in to  the feed as the variable `initialFirstEntryHREF`
-    * for reference. The code then loads the feed using the second object in the
-    * allFeeds array.
-    *
-    * The code passes `done` as an argument in to the `beforeEach()` function
-    * and then as the second argument and callback of the `loadfeed()` function
-    * to prevent the spec from running before the asynchronous `loadfeed()`
-    * function comletes its task here.
+    * A Udacitys reviewer's suggestion was also relied on to get started
+    * implementing the nested `loadFeed()` functions, a method that makes sure
+    * the second `allFeeds` object is NOT loaded, and it's `innnerHTML` "read"
+    * and stored as a variable, until the first feed is finished loading and
+    * having its `innerHTML` being read and stored.
     */
     beforeEach(function(done) {
-      loadFeed(0);
-      initialFirstEntryHREF = document.getElementsByClassName('feed').item(0).firstElementChild.getAttribute('href');
-      loadFeed(1, done);
+      loadFeed(0, function() {
+        /* As suggested by a Udacity reviewer, `firstFeed` and `secondFeed` are
+        * assigned the values of the HTML inside the `feed` `div` rather than
+        * something more specific, like the URL of the first item loaded to the
+        * feed, as had been the case in previous iterations of this code, in
+        * order to make the test 'more precise and thorough.'
+        */
+        firstFeed = document.getElementsByClassName('feed').item(0).innerHTML;
+        loadFeed(1, function() {
+          secondFeed = document.getElementsByClassName('feed').item(0).innerHTML;
+          done();
+        });
+      });
     });
 
     /* COMPLETED. As specified by source code's TODO, this test ensures that
     * "when a new feed is loaded by the loadFeed function that the content
     * actually changes," keeping in mind the fact that loadFeed() is
     * asynchronous.
+    *
+    * Compares the `innerHTML` of the `.feed` `div` element after loading it
+    * with the first object in the `allFeeds` array with the `innerHTML` of
+    * the `.feed` `div` after loading with the second object in `allFeeds`.
     */
     it('the content of the feed container changes when a new feed is loaded', function() {
-      /* For comparison with the value of `initialFirstEntryHREF`, value of
-      * `newFirstEntryHREF` is set, now that `loadFeed(1)` has run courtesy
-      * of the `beforeEach()` function in this suite.
-      */
-      newFirstEntryHREF = document.getElementsByClassName('feed').item(0).firstElementChild.getAttribute('href');
-
-      /* Compares the  `href` attribute of the first element child in the
-      * `.feed` `<div>` loaded after the `loadFeed()` function is run
-      * with the first object in the `allFeeds` array as its argument with the
-      * corresponding `href` attribute that results when `loadFeed()` is run with
-      * the second object in `allFeeds` as its argument.
-      */
-      expect(initialFirstEntryHREF).not.toBe(newFirstEntryHREF);
+      expect(firstFeed).not.toBe(secondFeed);
     });
   });
 }());
