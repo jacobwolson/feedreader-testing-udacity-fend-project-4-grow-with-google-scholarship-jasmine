@@ -1,4 +1,4 @@
-# Feed Reader Testing Project | Udacity FEND | 2018
+# Feed Reader Testing | Udacity FEND | 2018
 
 Project 4 for Udacity's Front-End Web Developer Nanodegree program; completed as part of the Grow with Google Scholarship Program, 2018.
 
