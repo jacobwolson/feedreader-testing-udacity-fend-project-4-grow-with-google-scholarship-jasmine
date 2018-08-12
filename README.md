@@ -65,7 +65,7 @@ A portion of the code and most of the comments in `jasmine.js` were provided by 
 
 * The article "Using Jasmine 2.0's New Done Function to Test Asynchronous Processes" [by Rob Gravelle posted at HTML Goodies](https://www.htmlgoodies.com/beyond/javascript/stips/using-jasmine-2.0s-new-done-function-to-test-asynchronous-processes.html) was also consulted for information on running tests on asynchronous code.
 
-* The code used for checking if an element has a certain class using plain JavaScript was inspired by a May 2, 2013 post by user "Damien" [on Stack Overflow](https://stackoverflow.com/a/16337545).
+* The code used for checking if an element has a certain class using plain JavaScript was inspired by a May 2, 2013 [post by user "Damien" on Stack Overflow](https://stackoverflow.com/a/16337545).
 
 * This README was based on [a template by Billie Thompson](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) posted as a gist under the username "PurpleBooth." The Github repository ["Awesome README" by Matias Singers](https://github.com/matiassingers/awesome-readme) posting under the username "matiassingers" was also consulted.
 
