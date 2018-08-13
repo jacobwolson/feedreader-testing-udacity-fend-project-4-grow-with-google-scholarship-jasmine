@@ -11,7 +11,7 @@ furthermore provided by Udacity as part of the source code, which also included 
 
 Jacob W. Olson filled out specified portions of this project's `feedreader.js` file in accordance with the instructions given in a series of TODO's provided by Udacity. This task involved writing various suites and tests to run against the web application to confirm the proper functionality of various features it came with. Particular sources for pieces of the code are noted in the comments of `feedreader.js`, and sources are also referenced in the "Acknowledgments" section of this README, below.
 
-A portion of the code and most of the comments in `jasmine.js` were provided by Udacity, as noted in the file. The remainder of the project's code was also provided by Udacity.
+A portion of the code and most of the comments in `feedreader.js` were provided by Udacity, as noted in the file. The remainder of the project's code was also provided by Udacity.
 
 ## Getting Started
 
